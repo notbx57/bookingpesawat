@@ -7,6 +7,21 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+## Petunjuk untuk developer yang mau clone ini
+Syarat : PHP 8.1 , Node.js terinstall karena pake laravel 10.*
+1. git clone repo ini
+2. buka folder clone
+3. jalankan command "composer install"
+4. jalankan command "php artisan key:generate"
+5. Set up .env terlebih dahulu, konekin ke Mysql kalian
+6. jalankan command "php artisan migrate fresh"
+7. jalankan command "npm i"
+8. jalankan command "npm run dev"
+9. jalankan command "php artisan serve"
+10. Happy coding
+
+
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
@@ -64,3 +79,5 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
