@@ -8,8 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <link rel="icon" href="assets/images/favicon.ico">
-  <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
   <title>Booking Pesawat</title>
 
@@ -42,8 +41,7 @@
         <a class="navbar-brand" href="index.html">
           <h2>Flight With <em>YOU</em></h2>
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-          aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -66,8 +64,7 @@
             <li class="nav-item">
               <form method="POST" action="{{ route('logout') }}">
                 @csrf
-                <a href="route('logout')" onclick="event.preventDefault(); this.closest('form').submit();"
-                  class="nav-link">🚪Logout</a>
+                <a href="route('logout')" onclick="event.preventDefault(); this.closest('form').submit();" class="nav-link">🚪Logout</a>
               </form>
             </li>
             @else
@@ -117,15 +114,14 @@
         </div>
         <div class="col-md-6">
           <div class="left-content">
-            <p>Dari ke</p>
-            <a href="#" class="filled-button">Cari Penerbangan</a>
+            <p>Ayo cek penerbangan hari ini siapa tahu ada promo!</p>
+            <a href="{{url('login')}}" class="filled-button">Cek Tujuan Sekarang!</a>
           </div>
         </div>
       </div>
     </div>
   </div>
   </div>
-
 
   <div class="latest-products">
     <div class="container">
@@ -211,8 +207,7 @@
 
         <div class="col-lg-4 col-md-6">
           <div class="service-item">
-            <a href="#" class="services-item-image"><img src="assets/images/blog-1-370x270.jpg" class="img-fluid"
-                alt=""></a>
+            <a href="#" class="services-item-image"><img src="assets/images/blog-1-370x270.jpg" class="img-fluid" alt=""></a>
 
             <div class="down-content">
               <h4><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit hic</a></h4>
@@ -224,8 +219,7 @@
         </div>
         <div class="col-lg-4 col-md-6">
           <div class="service-item">
-            <a href="#" class="services-item-image"><img src="assets/images/blog-2-370x270.jpg" class="img-fluid"
-                alt=""></a>
+            <a href="#" class="services-item-image"><img src="assets/images/blog-2-370x270.jpg" class="img-fluid" alt=""></a>
 
             <div class="down-content">
               <h4><a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit</a></h4>
@@ -237,8 +231,7 @@
         </div>
         <div class="col-lg-4 col-md-6">
           <div class="service-item">
-            <a href="#" class="services-item-image"><img src="assets/images/blog-3-370x270.jpg" class="img-fluid"
-                alt=""></a>
+            <a href="#" class="services-item-image"><img src="assets/images/blog-3-370x270.jpg" class="img-fluid" alt=""></a>
 
             <div class="down-content">
               <h4><a href="#">Aperiam modi voluptatum fuga officiis cumque</a></h4>
@@ -374,11 +367,13 @@
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 
   <!-- Additional Scripts -->
   <script src="assets/js/custom.js"></script>
   <script src="assets/js/owl.js"></script>
+
 </body>
 
 </html>

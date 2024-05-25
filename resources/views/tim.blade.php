@@ -56,7 +56,7 @@
 
                 @if (Route::has('login'))
                 @auth
-                <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard') }}">✈Dashboard</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard') }}">✈Back To Dashboard</a></li>
                 @else
                 <li class="nav-item"><a class="nav-link" href="{{ url('login') }}">✈Login</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ url('register') }}">👤Register</a></li>
