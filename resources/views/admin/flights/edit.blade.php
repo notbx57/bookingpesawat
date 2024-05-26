@@ -42,11 +42,6 @@
                             </div>
 
                             <div class="col-span-6 sm:col-span-4">
-                                <label for="tanggal" class="block font-medium text-sm text-gray-700">{{ __('Tanggal') }}</label>
-                                <input id="tanggal" type="date" name="tanggal" value="{{ old('tanggal', $flight->tanggal) }}" class="form-input rounded-md shadow-sm mt-1 block w-full" required />
-                            </div>
-
-                            <div class="col-span-6 sm:col-span-4">
                                 <label for="harga" class="block font-medium text-sm text-gray-700">{{ __('Harga') }}</label>
                                 <input id="harga" type="number" name="harga" value="{{ old('harga', $flight->harga) }}" class="form-input rounded-md shadow-sm mt-1 block w-full" required />
                             </div>

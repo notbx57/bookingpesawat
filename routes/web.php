@@ -4,7 +4,6 @@ use App\Http\Controllers\AdminPanel\AdminController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserPanel\UserController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\FlightSearchController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,9 +28,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    Route::get('/tujuan', function () {
-        return view('tujuan');
-    });
+    Route::get('/tujuan', [UserController::class, 'tujuan'])->name('tujuan');
+    Route::get('/tujuan/{id}', [UserController::class, 'showdetails'])->name('showdetails');
 });
 
 require __DIR__ . '/auth.php';

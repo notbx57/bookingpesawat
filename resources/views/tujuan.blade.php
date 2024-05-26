@@ -2,28 +2,22 @@
 <html lang="en">
 
 <head>
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
   <link rel="icon" href="assets/images/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
-
   <title>Booking Pesawat</title>
-
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
   <!-- Additional CSS Files -->
   <link rel="stylesheet" href="assets/css/fontawesome.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/owl.css">
-
 </head>
 
 <body>
-
   <!-- ***** Preloader Start ***** -->
   <div id="preloader">
     <div class="jumper">
@@ -72,7 +66,6 @@
     </nav>
   </header>
 
-
   <!-- Page Content -->
   <div class="page-heading about-heading header-text" style="background-image: url(assets/images/heading-6-1920x500.jpg);">
     <div class="container">
@@ -90,62 +83,23 @@
   <div class="products">
     <div class="container">
       <div class="row">
+        @foreach($flights as $flight)
         <div class="col-md-4">
           <div class="product-item">
-            <img src="assets/images/product-1-370x270.jpg" alt="">
+            <img src="{{ Storage::url($flight->image_path) }}" alt="{{ $flight->ke }}">
 
             <div class="down-content">
-              <h4>Jakarta - Bali</h4>
+              <h4>{{ $flight->dari}} - {{ $flight->ke }}</h4>
 
-              <h6><small>Mulai</small> IDR1.240.000 <small>per orang</small></h6>
-
-              <p>Terbanglah dengan Garuda Indonesia, maskapai pilihan terbaik untuk pengalaman perjalanan yang istimewa. Nikmati layanan unggul, kenyamanan, dan keamanan terbaik di udara!</p>
+              <h6><small>Mulai</small> IDR{{ number_format($flight->harga, 0, ',', '.') }} <small>per orang</small></h6>
 
               <span>
-                <a href="#" data-toggle="modal" data-target="#exampleModal">Pesan Sekarang</a>
+                <a href="{{ route('showdetails', $flight->id) }}">Pesan Sekarang</a>
               </span>
             </div>
           </div>
         </div>
-
-        <div class="col-md-4">
-          <div class="product-item">
-            <img src="assets/images/product-2-370x270.jpg" alt="">
-
-            <div class="down-content">
-              <h4>Jakarta - Surabaya</h4>
-
-              <h6><small>Mulai</small> IDR1.100.000 <small>per orang</small></h6>
-
-              <p>Jelajahi destinasi impian Anda dengan kenyamanan dan keamanan bersama Lion Air. Temukan harga terbaik untuk perjalanan Anda sekarang!</p>
-
-              <span>
-                <a href="#" data-toggle="modal" data-target="#exampleModal">Pesan Sekarang</a>
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="product-item">
-            <img src="assets/images/product-3-370x270.jpg" alt="">
-
-            <div class="down-content">
-              <h4>Makassar - Bali</h4>
-
-              <h6><small>Mulai</small> IDR1.500.000 <small>per orang</small></h6>
-
-              <p>Rencanakan perjalanan Anda dengan Citilink dan nikmati penerbangan yang nyaman dengan harga terjangkau! Temukan beragam destinasi menarik dengan layanan yang prima!</p>
-
-              <span>
-                <a href="#" data-toggle="modal" data-target="#exampleModal">Pesan Sekarang</a>
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Add more destinations as needed -->
-
+        @endforeach
       </div>
     </div>
   </div>
@@ -163,7 +117,8 @@
   </footer>
 
   <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  @foreach($flights as $flight)
+  <div class="modal fade" id="exampleModal{{ $flight->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -184,7 +139,7 @@
 
                 <div class="col-md-6">
                   <fieldset>
-                    <input type="email" class="form-control" placeholder="Email" required="">
+                    <input type="email" class="form-control" value="{{ $userEmail }}" placeholder="Email" required="" readonly>
                   </fieldset>
                 </div>
               </div>
@@ -198,7 +153,7 @@
 
                 <div class="col-md-6">
                   <fieldset>
-                    <input type="text" class="form-control" placeholder="Tanggal Keberangkatan" required="">
+                    <input type="date" class="form-control" placeholder="Tanggal Keberangkatan" required="" readonly>
                   </fieldset>
                 </div>
               </div>
@@ -206,13 +161,13 @@
               <div class="row">
                 <div class="col-md-6">
                   <fieldset>
-                    <input type="text" class="form-control" placeholder="Asal Kota" required="">
+                    <input type="text" class="form-control" value="{{$flight->dari}}" placeholder="Asal Kota" required="" readonly>
                   </fieldset>
                 </div>
 
                 <div class="col-md-6">
                   <fieldset>
-                    <input type="text" class="form-control" placeholder="Tujuan Kota" required="">
+                    <input type="text" class="form-control" value="{{$flight->ke}}" placeholder="Tujuan Kota" required="" readonly>
                   </fieldset>
                 </div>
               </div>
@@ -220,14 +175,21 @@
               <div class="row">
                 <div class="col-md-6">
                   <fieldset>
-                    <input type="text" class="form-control" placeholder="Maskapai" required="">
+                    <input type="text" class="form-control" value="{{$flight->nama_maskapai}}" placeholder="Maskapai" required="" readonly>
                   </fieldset>
                 </div>
 
                 <div class="col-md-6">
                   <fieldset>
-                    <input type="number" class="form-control" placeholder="Jumlah Penumpang" required="">
+                    <input type="number" class="form-control" id="jumlah-penumpang{{$flight->id}}" placeholder="Jumlah Penumpang" required="" min="1">
                   </fieldset>
+                </div>
+              </div>
+
+              <!-- Display real-time price -->
+              <div class="row">
+                <div class="col-md-12">
+                  <h5 id="harga{{$flight->id}}">IDR{{ number_format($flight->harga, 0, ',', '.') }}</h5>
                 </div>
               </div>
             </form>
@@ -241,11 +203,30 @@
     </div>
   </div>
 
+  <!-- JavaScript for real-time price update --> 
+  <script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+      const jumlahPenumpangInput = document.getElementById('jumlah-penumpang');
+      const totalPriceElement = document.getElementById('harga');
+      const hargaPerOrang = parseInt("{{$flight->harga }}");
+
+      jumlahPenumpangInput.addEventListener('input', function() {
+
+        const jumlahPenumpang = parseInt(jumlahPenumpangInput.value) || 0;
+
+        const totalHarga = jumlahPenumpang * hargaPerOrang;
+
+        totalPriceElement.textContent = 'IDR' + totalHarga.toLocaleString('id-ID');
+      });
+    });
+  </script>
+  @endforeach
+
+
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
 
   <!-- Additional Scripts -->
   <script src="assets/js/custom.js"></script>

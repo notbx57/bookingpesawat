@@ -18,10 +18,9 @@ class Admin extends Model
         'nama_maskapai',
         'dari',
         'ke',
-        'tanggal',
         'harga',
+        'image_path'
     ];
 
     protected $table = 'flights';
-
 }
