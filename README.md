@@ -14,7 +14,7 @@ Syarat : PHP 8.1 , Node.js terinstall karena pake laravel 10.*
 3. jalankan command "composer install"
 4. jalankan command "php artisan key:generate"
 5. Set up .env terlebih dahulu, konekin ke Mysql kalian
-6. jalankan command "php artisan migrate fresh"
+6. jalankan command "php artisan migrate:fresh"
 7. jalankan command "npm i"
 8. jalankan command "npm run dev"
 9. jalankan command "php artisan serve"
