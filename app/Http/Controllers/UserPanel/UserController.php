@@ -20,15 +20,11 @@ class UserController extends Controller
     public function tujuan()
     {
         $flights = Admin::all();
-        $user = Auth::user();
-        $userEmail = $user->email;
-        return view('tujuan', compact('flights', 'userEmail'));
+        return view('tujuan', compact('flights'));
     }
 
-    public function showdetails($id)
-    {
-        $flight = Admin::findOrFail($id);
-
-        return view('details', compact('flight'));
+    public function tickets(){
+        return view('bookingticket');
     }
+
 }

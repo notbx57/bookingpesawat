@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminPanel\AdminController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserPanel\BookingController;
 use App\Http\Controllers\UserPanel\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,7 +30,9 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/tujuan', [UserController::class, 'tujuan'])->name('tujuan');
-    Route::get('/tujuan/{id}', [UserController::class, 'showdetails'])->name('showdetails');
+    Route::get('/tujuan/{id}/book', [BookingController::class, 'booking'])->name('booking.form');
+    Route::post('/book-flight', [BookingController::class, 'bookFlight'])->name('book.flight');
+    Route::get('/dashboard/tickets', [UserController::class, 'tickets'])->name('tickets');
 });
 
 require __DIR__ . '/auth.php';
