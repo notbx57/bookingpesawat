@@ -81,7 +81,7 @@
                     <div class="col-md-20">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="mb-0">Book Now</h4>
+                                <h4 class="mb-0">Booking Tujuanmu Disini !</h4>
                                 <input type="hidden" id="total_price" name="total_price" value="{{ $flight->harga }}">
                             </div>
                             <div class="card-body">

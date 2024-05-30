@@ -23,7 +23,8 @@ return new class extends Migration
             $table->string('maskapai');
             $table->integer('jumlah_penumpang');
             $table->string('email');
-            $table->integer('total_price');
+            $table->bigInteger('total_price');
+            $table->enum('status', ['Unpaid', 'Paid'])->default('Unpaid');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

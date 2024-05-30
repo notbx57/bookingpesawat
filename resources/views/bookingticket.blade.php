@@ -41,30 +41,26 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
+
+        @auth
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
+            <li class="nav-item">
               <a class="nav-link" href="{{ url ('/dashboard') }}">Home
                 <span class="sr-only">(current)</span>
               </a>
             </li>
-
-            <li class="nav-item"><a class="nav-link" href="{{url('/tujuan')}}">Tujuan</a></li>
+            @endauth
+            <li class="nav-item active"><a class="nav-link" href="{{url('/tujuan')}}">Tujuan</a></li>
             <li class="nav-item"><a class="nav-link" href="{{url('/promo')}}">Promo</a></li>
             <li class="nav-item"><a class="nav-link" href="{{url('/tim')}}">Tim</a></li>
 
             @if (Route::has('login'))
             @auth
-            <li class="nav-item">
-              <form method="POST" action="{{ route('logout') }}">
-                @csrf
-                <a href="route('logout')" onclick="event.preventDefault(); this.closest('form').submit();" class="nav-link">🚪Logout</a>
-              </form>
-            </li>
-            <li class="nav-item"><a class="nav-link" href="{{ url('login') }}">🎫Tickets</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard') }}">✈Back to Dashboard</a></li>
             @else
             <li class="nav-item"><a class="nav-link" href="{{ url('login') }}">✈Login</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ url('register') }}">📟Register</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ url('register') }}">👤Register</a></li>
             @endauth
             @endif
           </ul>
@@ -74,6 +70,67 @@
   </header>
 
   <!-- Page Content -->
+  <div class="">
+    <div class="container">
+      <div class="">
+        <div class="col">
+          <div class="section-heading">
+            <h2>Order Booking Anda</h2>
+          </div>
+        </div>
+        <div class="">
+          <div class="">
+            <h4>Order Booking Anda</h4>
+            <table class="table table-striped">
+              @foreach ($orders as $detail)
+              <thead>
+                <tr>
+                  <th>Nama</th>
+                  <th>Nomor Telepon</th>
+                  <th>Dari</th>
+                  <th>Ke</th>
+                  <th>Tanggal Keberangkatan</th>
+                  <th>Maskapai</th>
+                  <th>Jumlah Penumpang</th>
+                  <th>Email</th>
+                  <th>Harga Total</th>
+                  <th>Status</th>
+                  @if ($detail->status == 'Paid')
+                  <th>Action</th>
+                  @endif
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{{ $detail->fullname }}</td>
+                  <td>{{ $detail->phonenumber }}</td>
+                  <td>{{ $detail->dari }}</td>
+                  <td>{{ $detail->ke }}</td>
+                  <td>{{ $detail->tanggal }}</td>
+                  <td>{{ $detail->maskapai }}</td>
+                  <td>{{ $detail->jumlah_penumpang }}</td>
+                  <td>{{ $detail->email }}</td>
+                  <td>Rp. {{ number_format($detail->total_price, 0, ',', '.') }}</td>
+                  <td>{{ $detail->status }}</td>
+                  <td>
+                    @if ($detail->status == 'Paid')
+                    <a href="#" class="filled-button">Print Tiket</a>
+                    @else
+                    <form action="{{ route('orders.pay', $detail->id) }}" method="POST">
+                      @csrf
+                      <button type="submit" class="filled-button">Bayar</button>
+                    </form>
+                    @endif
+                  </td>
+                </tr>
+                @endforeach
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
   <footer>

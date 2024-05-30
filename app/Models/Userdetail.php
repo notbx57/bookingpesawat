@@ -28,7 +28,8 @@ class UserDetail extends Model
         'maskapai',
         'jumlah_penumpang',
         'email',
-        'total_price'
+        'total_price',
+        'status',
     ];
 
     /**

@@ -44,6 +44,11 @@
                             </div>
 
                             <div class="col-span-6 sm:col-span-4">
+                                <label for="kuota_kursi" class="block font-medium text-sm text-gray-700">{{ __('Jumlah Kursi') }}</label>
+                                <input id="kuota_kursi" type="number" name="kuota_kursi" value="{{ old('kuota_kursi') }}" class="form-input rounded-md shadow-sm mt-1 block w-full" required />
+                            </div>
+
+                            <div class="col-span-6 sm:col-span-4">
                                 <label for="image" class="block font-medium text-sm text-gray-700">{{ __('Image') }}</label>
                                 <input id="image" type="file" name="image" class="form-input rounded-md shadow-sm mt-1 block w-full" accept="image/jpeg,image/png,image/jpg,image/gif,image/svg">
                             </div>

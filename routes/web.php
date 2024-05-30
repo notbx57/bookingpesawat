@@ -6,6 +6,8 @@ use App\Http\Controllers\UserPanel\BookingController;
 use App\Http\Controllers\UserPanel\UserController;
 use Illuminate\Support\Facades\Route;
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,7 +34,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/tujuan', [UserController::class, 'tujuan'])->name('tujuan');
     Route::get('/tujuan/{id}/book', [BookingController::class, 'booking'])->name('booking.form');
     Route::post('/book-flight', [BookingController::class, 'bookFlight'])->name('book.flight');
-    Route::get('/dashboard/tickets', [UserController::class, 'tickets'])->name('tickets');
+    Route::get('/dashboard/orders/{user_id?}', [UserController::class, 'orders'])->name('orders');
+    Route::post('/orders/{order}/pay', [BookingController::class, 'pay'])->name('orders.pay');
+    Route::get('/invoice/{id}',[BookingController::class, 'invoice'])->name('invoice');
 });
 
 require __DIR__ . '/auth.php';

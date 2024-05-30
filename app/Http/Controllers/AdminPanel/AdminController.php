@@ -27,6 +27,7 @@ class AdminController extends Controller
             'dari' => 'required',
             'ke' => 'required',
             'harga' => 'required|numeric',
+            'kuota_kursi' => 'required',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:4096',
         ]);
 

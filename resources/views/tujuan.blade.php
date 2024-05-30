@@ -91,11 +91,14 @@
             <div class="down-content">
               <h4>{{ $flight->dari}} - {{ $flight->ke }}</h4>
 
-              <h6><small>Mulai</small> IDR{{ number_format($flight->harga, 0, ',', '.') }} <small>per orang</small></h6>
+              <h6>IDR{{ number_format($flight->harga, 0, ',', '.') }} <small>per orang</small></h6>
+              <h6><b>Kuota :</b> {{$flight->kuota_kursi}}</h6>
+              <div class="row">
+                <span>
+                  <a href="{{ route('booking.form', $flight->id) }}" >Pesan Sekarang</a>
+                </span>
+              </div>
 
-              <span>
-                <a href="{{ route('booking.form', $flight->id) }}">Pesan Sekarang</a>
-              </span>
             </div>
           </div>
         </div>

@@ -16,7 +16,8 @@ return new class extends Migration
       $table->string('nama_maskapai');
       $table->string('dari');
       $table->string('ke');
-      $table->decimal('harga', 8, 2);
+      $table->bigInteger('harga');
+      $table->integer('kuota_kursi');
       $table->string('image_path')->nullable();
       $table->timestamps();
     });

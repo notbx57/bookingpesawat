@@ -64,7 +64,11 @@
                 <a href="route('logout')" onclick="event.preventDefault(); this.closest('form').submit();" class="nav-link">🚪Logout</a>
               </form>
             </li>
-            <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard/tickets') }}">🎫Tickets</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('orders', ['user_id' => Auth::user()->id]) }}">
+                🔂Orders
+              </a>
+            </li>
             @else
             <li class="nav-item"><a class="nav-link" href="{{ url('login') }}">✈Login</a></li>
             <li class="nav-item"><a class="nav-link" href="{{ url('register') }}">📟Register</a></li>

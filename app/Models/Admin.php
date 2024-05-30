@@ -19,6 +19,7 @@ class Admin extends Model
         'dari',
         'ke',
         'harga',
+        'kuota_kursi',
         'image_path'
     ];
 
