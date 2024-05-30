@@ -8,7 +8,7 @@
 </p>
 
 ## Petunjuk untuk developer yang mau clone ini
-Syarat : PHP 8.1 , Node.js terinstall karena pake laravel 10.*
+Syarat : PHP 8.1 , Node.js, Laragon/XAMPP, ngrok, Midtrans terinstall karena pake laravel 10.*
 1. git clone repo ini
 2. buka folder clone
 3. jalankan command "composer install"
@@ -18,7 +18,24 @@ Syarat : PHP 8.1 , Node.js terinstall karena pake laravel 10.*
 7. jalankan command "npm i"
 8. jalankan command "npm run dev"
 9. jalankan command "php artisan serve"
-10. Happy coding
+
+##Menjalankan API Midtrans (New)
+
+10. Setup Midtrans kalian agar dapat environment sandbox
+11. tambahkan api key punya kalian ke dalam .env seperti ini
+![image](https://github.com/notbx57/bookingpesawat/assets/94163016/e4950ad2-abe8-4e2c-a2c7-c91342e800d0)
+MIDTRANS_MERCHANT_ID=
+MIDTRANS_CLIENT_KEY=
+MIDTRANS_SERVER_KEY=
+13. jalankan command "php -S localhost:7000 -t bookingpesawat/public" di folder sebelum folder ini (Contoh : C:\laragon\www)
+14. jalankan command "ngrok http localhost:7000" (Sebelumnya kalian harus install ngrok, tambahkan ke PATH, lalu jalankan command "ngrok config add-authtoken (AUTH TOKEN KALIAN DISINI) "
+15. Copy forwarding webnya jika kalian sudah seperti ini
+![image](https://github.com/notbx57/bookingpesawat/assets/94163016/8a03b91d-9452-4cb2-a38e-61ffe716e7d7)
+16. Pastekan ke dalam akun midtrans kalian di SETTINGS -> PAYMENT -> PAYMENT NOTIFICATION URL seperti ini
+![image](https://github.com/notbx57/bookingpesawat/assets/94163016/45cec7e3-cd99-48b3-916f-f1e1c0ee53aa)
+17. Happy coding hahahahahaha
+
+
 
 
 
