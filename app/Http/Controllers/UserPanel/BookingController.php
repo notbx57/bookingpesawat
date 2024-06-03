@@ -92,7 +92,9 @@ class BookingController extends Controller
             }
         }
     }
+    
 
+    //ini belum selesai frontendnya bikinin dong
     public function invoice($id)
     {
         $order = UserDetail::find($id);
