@@ -16,7 +16,8 @@ class UserController extends Controller
             return redirect()->route('admin.dashboard');
         } else {
             $userdetails = UserDetail::all();
-            return view('dashboard', compact('userdetails'));
+            $user = Auth::user();
+            return view('dashboard', compact('userdetails', 'user'));
         }
     }
 

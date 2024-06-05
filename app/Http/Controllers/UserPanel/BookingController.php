@@ -33,6 +33,17 @@ class BookingController extends Controller
             'email' => 'required',
         ]);
 
+        $flight = Admin::findOrFail($request->input('flight_id'));
+
+        // Check jika kuota kursi masih ada
+        if ($flight->kuota_kursi < $validatedData['jumlah_penumpang']) {
+            return redirect()->back()->with('error', 'Maaf, tidak cukup kursi tersedia.');
+        }
+
+        // Update kuota_kursi ke Admin model
+        $flight->kuota_kursi -= $validatedData['jumlah_penumpang'];
+        $flight->save();
+
         $userDetail = new UserDetail([
             'user_id' => auth()->id(),
             'flight_id' => $request->input('flight_id'),
@@ -46,6 +57,7 @@ class BookingController extends Controller
             'total_price' => $validatedData['total_price'],
             'email' => $validatedData['email'],
         ]);
+
 
         $userDetail->save();
         return redirect()->route('dashboard')->with('success', 'Order Success, Silakan Cek Orders!');
@@ -95,7 +107,7 @@ class BookingController extends Controller
 
     public function invoice($id)
     {
-        $order = UserDetail::find($id);
-        return view('invoice', compact('$order'));
+        $order = UserDetail::findOrFail($id);
+        return view('invoice', compact('order'));
     }
 }

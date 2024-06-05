@@ -51,7 +51,7 @@
               </a>
             </li>
             @endauth
-            <li class="nav-item active"><a class="nav-link" href="{{url('/tujuan')}}">Tujuan</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{url('/tujuan')}}">Tujuan</a></li>
             <li class="nav-item"><a class="nav-link" href="{{url('/promo')}}">Promo</a></li>
             <li class="nav-item"><a class="nav-link" href="{{url('/tim')}}">Tim</a></li>
 
@@ -114,7 +114,7 @@
                   <td>{{ $detail->status }}</td>
                   <td>
                     @if ($detail->status == 'Paid')
-                    <a href="#" class="filled-button">Print Tiket</a>
+                    <a href="{{ route('invoice', $detail->id) }}" class="filled-button"><b>Cetak Tiket</b></a>
                     @else
                     <form action="{{ route('orders.pay', $detail->id) }}" method="POST">
                       @csrf

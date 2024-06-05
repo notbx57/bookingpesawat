@@ -38,8 +38,9 @@
   <header class="">
     <nav class="navbar navbar-expand-lg">
       <div class="container">
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="">
           <h2>Flight With <em>YOU</em></h2>
+          <h6>Selamat Datang {{$user->name}}</h6>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -53,7 +54,7 @@
             </li>
 
             <li class="nav-item"><a class="nav-link" href="{{url('/tujuan')}}">Tujuan</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{url('/promo')}}">Promo</a></li>
+            <li class="nav-item" hidden><a class="nav-link" href="{{url('/promo')}}">Promo</a></li>
             <li class="nav-item"><a class="nav-link" href="{{url('/tim')}}">Tim</a></li>
 
             @if (Route::has('login'))

@@ -53,7 +53,7 @@
             </li>
 
             <li class="nav-item"><a class="nav-link" href="{{url('/tujuan')}}">Tujuan</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{url('/promo')}}">Promo</a></li>
+            <li class="nav-item" hidden><a class="nav-link" href="{{url('/promo')}}">Promo</a></li>
             <li class="nav-item"><a class="nav-link" href="{{url('/tim')}}">Tim</a></li>
 
             @if (Route::has('login'))
@@ -115,7 +115,7 @@
         <div class="col-md-6">
           <div class="left-content">
             <p>Ayo cek penerbangan hari ini siapa tahu ada promo!</p>
-            <a href="{{url('login')}}" class="filled-button">Cek Tujuan Sekarang!</a>
+            <a href="{{url('tujuan')}}" class="filled-button">Cek Tujuan Sekarang!</a>  
           </div>
         </div>
       </div>

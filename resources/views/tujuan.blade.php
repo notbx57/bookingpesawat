@@ -49,7 +49,7 @@
             </li>
             @endauth
             <li class="nav-item active"><a class="nav-link" href="{{url('/tujuan')}}">Tujuan</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{url('/promo')}}">Promo</a></li>
+            <li class="nav-item" hidden><a class="nav-link" href="{{url('/promo')}}">Promo</a></li>
             <li class="nav-item"><a class="nav-link" href="{{url('/tim')}}">Tim</a></li>
 
             @if (Route::has('login'))

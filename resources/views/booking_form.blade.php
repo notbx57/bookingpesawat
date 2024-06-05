@@ -74,7 +74,7 @@
 
     <!-- Booking Form -->
     <div class="center-form">
-        <form method="POST" action="{{ route('book.flight') }}">
+        <form id="bookingForm" method="POST" action="{{ route('book.flight') }}">
             @csrf
             <div class="container">
                 <div class="row justify-content-center">
@@ -137,7 +137,8 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="jumlah_penumpang">Jumlah Penumpang</label>
-                                            <input type="number" class="form-control" id="jumlah_penumpang" name="jumlah_penumpang" placeholder="Jumlah Penumpang" required min="1">
+                                            <input type="number" class="form-control" id="jumlah_penumpang" name="jumlah_penumpang" placeholder="Jumlah Penumpang" required min="1" max="{{ $flight->kuota_kursi }}">
+                                            <small class="text-muted">Tersedia: {{ $flight->kuota_kursi }} kursi</small>
                                         </div>
                                     </div>
                                 </div>
@@ -165,6 +166,12 @@
         </form>
     </div>
 
+    @if(session('error'))
+    <div class="alert alert-danger">
+        {{ session('error') }}
+    </div>
+    @endif
+
     <!-- Bootstrap core JavaScript -->
     <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
@@ -172,18 +179,39 @@
     <script src="{{ asset('assets/js/owl.js') }}"></script>
 
     <script>
-    const passengerInput = document.getElementById('jumlah_penumpang');
-    const totalPriceElement = document.getElementById('totalPrice');
-    const totalPriceInput = document.getElementById('total_price');
-    const baseFare = {{ $flight->harga }};
+        const passengerInput = document.getElementById('jumlah_penumpang');
+        const totalPriceElement = document.getElementById('totalPrice');
+        const totalPriceInput = document.getElementById('total_price');
+        const baseFare = {{$flight -> harga}};
+        const availableSeats = {{$flight -> kuota_kursi}};
 
-    passengerInput.addEventListener('input', function() {
-        const passengers = parseInt(this.value) || 0;
-        const totalPrice = passengers * baseFare;
-        totalPriceElement.textContent = `IDR ${totalPrice.toLocaleString('id-ID')}`;
-        totalPriceInput.value = totalPrice;
-    });
-</script>
+        passengerInput.addEventListener('input', function() {
+            const passengers = parseInt(this.value) || 0;
+            const totalPrice = passengers * baseFare;
+            totalPriceElement.textContent = `IDR ${totalPrice.toLocaleString('id-ID')}`;
+            totalPriceInput.value = totalPrice;
+
+
+            if (passengers > availableSeats) {
+                alert(`Maaf, hanya tersedia ${availableSeats} kursi.`);
+                this.value = availableSeats;
+                const totalPrice = availableSeats * baseFare;
+                totalPriceElement.textContent = `IDR ${totalPrice.toLocaleString('id-ID')}`;
+                totalPriceInput.value = totalPrice;
+            }
+        });
+
+        document.getElementById('bookingForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const passengers = parseInt(passengerInput.value) || 0;
+            if (passengers > availableSeats) {
+                alert(`Maaf, hanya tersedia ${availableSeats} kursi.`);
+            } else {
+                alert('Pesanan anda sudah dibuat! Silakan cek "Orders" Untuk Pembayaran');
+                this.submit();
+            }
+        });
+    </script>
 
 </body>
 
