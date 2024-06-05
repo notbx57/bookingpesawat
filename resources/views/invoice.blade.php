@@ -156,7 +156,7 @@
             <button id="printButton">Print Invoice</button>
         </div>
         <div class="footer">
-            <h5>Booking anda dapat dicetak. <br> Terima Kasih telah memilih Flight With You sebagai booking website pilihan anda.</h5>
+            <h5>Terima Kasih telah memilih <br>Flight With You <br> sebagai booking website pilihan anda.</h5>
         </div>
     </div>
 
