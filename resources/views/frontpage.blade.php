@@ -114,8 +114,8 @@
         </div>
         <div class="col-md-6">
           <div class="left-content">
-            <p>Ayo cek penerbangan hari ini siapa tahu ada promo!</p>
-            <a href="{{url('tujuan')}}" class="filled-button">Cek Tujuan Sekarang!</a>  
+            <h3>Ayo cek penerbangan hari ini <br> untuk Melihat Tujuan !</h3>
+            <a href="{{url('tujuan')}}" class="filled-button">Cek Tujuan Sekarang!</a>
           </div>
         </div>
       </div>
