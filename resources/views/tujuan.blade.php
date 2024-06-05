@@ -84,6 +84,7 @@
     <div class="container">
       <div class="row">
         @foreach($flights as $flight)
+
         <div class="col-md-4">
           <div class="product-item">
             <img src="{{ Storage::url($flight->image_path) }}" alt="{{ $flight->ke }}">
@@ -93,11 +94,19 @@
 
               <h6>IDR{{ number_format($flight->harga, 0, ',', '.') }} <small>per orang</small></h6>
               <h6><b>Kuota :</b> {{$flight->kuota_kursi}}</h6>
+              @if ($flight->kuota_kursi > 0)
               <div class="row">
                 <span>
                   <a href="{{ route('booking.form', $flight->id) }}" >Pesan Sekarang</a>
                 </span>
               </div>
+              @else
+              <div class="row">
+                <span>
+                  <h6>Kuota Habis</h6>
+                </span>
+              </div>
+              @endif
 
             </div>
           </div>

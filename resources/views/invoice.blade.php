@@ -139,6 +139,7 @@
         <div class="header">
             <div class="logo">Flight With You</div>
             <h1 class="title">Invoice Tiket Pesawat</h1>
+            <h2>Ticket ID : Generate Random number here (10 characters length)</h2>
         </div>
         <div class="details">
             <p><span>Nama:</span> <span>{{ $order->fullname }}</span></p>

@@ -138,7 +138,8 @@
                                         <div class="form-group">
                                             <label for="jumlah_penumpang">Jumlah Penumpang</label>
                                             <input type="number" class="form-control" id="jumlah_penumpang" name="jumlah_penumpang" placeholder="Jumlah Penumpang" required min="1" max="{{ $flight->kuota_kursi }}">
-                                            <small class="text-muted">Tersedia: {{ $flight->kuota_kursi }} kursi</small>
+                                            <small class="text-muted">Tersedia: {{ $flight->kuota_kursi }} kursi</small> <br>
+                                            <small class="text-muted">Max. 10 penumpang</small>
                                         </div>
                                     </div>
                                 </div>
@@ -192,10 +193,10 @@
             totalPriceInput.value = totalPrice;
 
 
-            if (passengers > availableSeats) {
-                alert(`Maaf, hanya tersedia ${availableSeats} kursi.`);
-                this.value = availableSeats;
-                const totalPrice = availableSeats * baseFare;
+            if (passengers > 10) {
+                alert(`Maaf, pemesanan maksimal 10 kursi.`);
+                this.value = 10;
+                const totalPrice = 10 * baseFare;
                 totalPriceElement.textContent = `IDR ${totalPrice.toLocaleString('id-ID')}`;
                 totalPriceInput.value = totalPrice;
             }
@@ -205,7 +206,7 @@
             event.preventDefault();
             const passengers = parseInt(passengerInput.value) || 0;
             if (passengers > availableSeats) {
-                alert(`Maaf, hanya tersedia ${availableSeats} kursi.`);
+                alert(`Maaf, kuota kursi telah habis`);
             } else {
                 alert('Pesanan anda sudah dibuat! Silakan cek "Orders" Untuk Pembayaran');
                 this.submit();
