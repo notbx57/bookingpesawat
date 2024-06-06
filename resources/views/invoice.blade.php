@@ -133,12 +133,21 @@
             }
         }
     </style>
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+
 </head>
 
 <body>
     <div class="ticket">
+
         <div class="header">
-            <div class="logo">Flight With You</div>
+            <h2 class="logo">FLIGHT WITH YOU</h2>
             <h1 class="title">Invoice Tiket Pesawat</h1>
             <h2>Ticket ID : <span id="ticketId"></span></h2>
         </div>
@@ -184,6 +193,15 @@
             }, 1000);
         });
     </script>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+    <!-- Additional Scripts -->
+    <script src="assets/js/custom.js"></script>
+    <script src="assets/js/owl.js"></script>
 </body>
 
 </html>
