@@ -84,6 +84,7 @@
             margin-top: 30px;
         }
 
+
         button {
             background-color: #ba1809;
             color: white;
@@ -139,7 +140,7 @@
         <div class="header">
             <div class="logo">Flight With You</div>
             <h1 class="title">Invoice Tiket Pesawat</h1>
-            <h2>Ticket ID : Generate Random number here (10 characters length)</h2>
+            <h2>Ticket ID : <span id="ticketId"></span></h2>
         </div>
         <div class="details">
             <p><span>Nama:</span> <span>{{ $order->fullname }}</span></p>
@@ -160,9 +161,22 @@
         </div>
     </div>
 
-
     <script type="text/javascript">
         const printButton = document.getElementById('printButton');
+        const ticketIdElement = document.getElementById('ticketId');
+
+        function generateTicketId() {
+            let ticketId = '';
+            const characters = '0123456789';
+            for (let i = 0; i < 16; i++) {
+                ticketId += characters.charAt(Math.floor(Math.random() * characters.length));
+            }
+            return ticketId;
+        }
+
+        const generatedTicketId = generateTicketId();
+        ticketIdElement.textContent = generatedTicketId;
+
         printButton.addEventListener('click', function() {
             window.print();
             setTimeout(function() {
