@@ -105,7 +105,7 @@
             <div class="down-content">
               <h4>Rayyen Benoxyto (Main)</h4>
               <span>1304211055</span>
-              <p>Membuat, dan mengatur keseluruhan model, controller, API, dan view website ini, Fullstack dev</p>
+              <p>Membuat, dan mengatur keseluruhan model, controller, API, dan view website ini, Fullstack coder</p>
             </div>
           </div>
         </div>
@@ -171,7 +171,7 @@
             <div class="down-content">
               <h4>Aghniya Erytama</h4>
               <span>1304211009</span>
-              <p>Slide ppt editor 1</p>
+              <p>Slide ppt editor 1 n dokumen</p>
             </div>
           </div>
         </div>
@@ -193,7 +193,7 @@
             <div class="down-content">
               <h4>Kevin Luzan de Fretes</h4>
               <span>1304211046</span>
-              <p>Slide ppt editor 2</p>
+              <p>Slide ppt editor 2 n dokumen</p>
             </div>
           </div>
         </div>
