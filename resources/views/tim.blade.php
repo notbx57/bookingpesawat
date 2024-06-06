@@ -171,7 +171,7 @@
             <div class="down-content">
               <h4>Aghniya Erytama</h4>
               <span>1304211009</span>
-              <p>?????</p>
+              <p>Slide ppt editor 1</p>
             </div>
           </div>
         </div>
@@ -193,7 +193,7 @@
             <div class="down-content">
               <h4>Kevin Luzan de Fretes</h4>
               <span>1304211046</span>
-              <p>Ummmmm....🤔</p>
+              <p>Slide ppt editor 2</p>
             </div>
           </div>
         </div>
