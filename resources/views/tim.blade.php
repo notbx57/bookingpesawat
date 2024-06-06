@@ -149,7 +149,7 @@
             <div class="down-content">
               <h4>Muh. Sahlan Ramadhan</h4>
               <span>1304211025</span>
-              <p>Membantu bagian controller dan ticketing, Testing dan Manual</p>
+              <p>Membantu bagian controller dan invoicing, Testing dan Manual</p>
             </div>
           </div>
         </div>

@@ -133,25 +133,13 @@
         </div>
         <div class="col-md-4">
           <div class="product-item">
-            <a href="#"><img src="assets/images/wonderfull-bali-pura.jpg" alt=""></a>
+            <a href="#"><img src="assets/images/slider-product_mastercard.jpg" alt=""></a>
             <div class="down-content">
               <a href="#">
-                <h4>Ke Bali Lebih Murah dari CGK</h4>
+                <h4>VISA Frenzy Buat kamu</h4>
               </a>
-              <h6><small>hemat dari</small> Rp.899.000 <small></small></h6>
-              <p>Raih liburan lebih hemat</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="product-item">
-            <a href="#"><img src="assets/images/australia.jpg" alt=""></a>
-            <div class="down-content">
-              <a href="#">
-                <h4>Hemat Jalan - Jalan ke Luar Negeri</h4>
-              </a>
-              <p>Pertama kali keluar negeri ? Promo ini bisa membuat kantongmu gak gampang boncos</p>
+              <h6><small>Dapatkan diskon</small> 32% <small></small></h6>
+              <p>Kalau kamu bayar pake kartu kredit</p>
             </div>
           </div>
         </div>
@@ -182,7 +170,7 @@
         <div class="col-md-6">
           <div class="left-content">
             <p>Tim kami berkomitmen untuk membuat perjalanan anda lebih mudah dan menyenangkan.</p>
-            <a href="#" class="filled-button">Tim kami</a>
+            <a href="{{url('tim')}}" class="filled-button">Tim kami</a>
           </div>
         </div>
         <div class="col-md-6">
@@ -194,161 +182,6 @@
     </div>
   </div>
 
-  <div class="services" style="background-image: url(assets/images/other-image-fullscren-1-1920x900.jpg);">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="section-heading">
-            <h2>Latest blog posts</h2>
-
-            <a href="blog.html">read more <i class="fa fa-angle-right"></i></a>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6">
-          <div class="service-item">
-            <a href="#" class="services-item-image"><img src="assets/images/blog-1-370x270.jpg" class="img-fluid" alt=""></a>
-
-            <div class="down-content">
-              <h4><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit hic</a></h4>
-
-              <p style="margin: 0;"> John Doe &nbsp;&nbsp;|&nbsp;&nbsp; 12/06/2020 10:30 &nbsp;&nbsp;|&nbsp;&nbsp; 114
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="service-item">
-            <a href="#" class="services-item-image"><img src="assets/images/blog-2-370x270.jpg" class="img-fluid" alt=""></a>
-
-            <div class="down-content">
-              <h4><a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit</a></h4>
-
-              <p style="margin: 0;"> John Doe &nbsp;&nbsp;|&nbsp;&nbsp; 12/06/2020 10:30 &nbsp;&nbsp;|&nbsp;&nbsp; 114
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="service-item">
-            <a href="#" class="services-item-image"><img src="assets/images/blog-3-370x270.jpg" class="img-fluid" alt=""></a>
-
-            <div class="down-content">
-              <h4><a href="#">Aperiam modi voluptatum fuga officiis cumque</a></h4>
-
-              <p style="margin: 0;"> John Doe &nbsp;&nbsp;|&nbsp;&nbsp; 12/06/2020 10:30 &nbsp;&nbsp;|&nbsp;&nbsp; 114
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="happy-clients">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="section-heading">
-            <h2>Testimoni</h2>
-
-            <a href="#">read more <i class="fa fa-angle-right"></i></a>
-          </div>
-        </div>
-        <div class="col-md-12">
-          <div class="owl-clients owl-carousel text-center">
-            <div class="service-item">
-              <div class="icon">
-                <i class="fa fa-user"></i>
-              </div>
-              <div class="down-content">
-                <h4>John Doe</h4>
-                <p class="n-m"><em>"Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla
-                    at quia quaerat."</em></p>
-              </div>
-            </div>
-
-            <div class="service-item">
-              <div class="icon">
-                <i class="fa fa-user"></i>
-              </div>
-              <div class="down-content">
-                <h4>Jane Smith</h4>
-                <p class="n-m"><em>"Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla
-                    at quia quaerat."</em></p>
-              </div>
-            </div>
-
-            <div class="service-item">
-              <div class="icon">
-                <i class="fa fa-user"></i>
-              </div>
-              <div class="down-content">
-                <h4>Antony Davis</h4>
-                <p class="n-m"><em>"Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla
-                    at quia quaerat."</em></p>
-              </div>
-            </div>
-
-            <div class="service-item">
-              <div class="icon">
-                <i class="fa fa-user"></i>
-              </div>
-              <div class="down-content">
-                <h4>John Doe</h4>
-                <p class="n-m"><em>"Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla
-                    at quia quaerat."</em></p>
-              </div>
-            </div>
-
-            <div class="service-item">
-              <div class="icon">
-                <i class="fa fa-user"></i>
-              </div>
-              <div class="down-content">
-                <h4>Jane Smith</h4>
-                <p class="n-m"><em>"Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla
-                    at quia quaerat."</em></p>
-              </div>
-            </div>
-
-            <div class="service-item">
-              <div class="icon">
-                <i class="fa fa-user"></i>
-              </div>
-              <div class="down-content">
-                <h4>Antony Davis</h4>
-                <p class="n-m"><em>"Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla
-                    at quia quaerat."</em></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="call-to-action">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="inner-content">
-            <div class="row">
-              <div class="col-md-8">
-                <h4>Lorem ipsum dolor sit amet, consectetur adipisicing.</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque corporis amet elite author nulla.
-                </p>
-              </div>
-              <div class="col-lg-4 col-md-6 text-right">
-                <a href="contact.html" class="filled-button">Contact Us</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
 
   <footer>
