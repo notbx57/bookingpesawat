@@ -29,8 +29,7 @@ MIDTRANS_CLIENT_KEY=
 MIDTRANS_SERVER_KEY=
 13. jalankan command "php -S localhost:7000 -t bookingpesawat/public" di folder sebelum folder ini (Contoh : C:\laragon\www)
 14. jalankan command "ngrok http localhost:7000" (Sebelumnya kalian harus install ngrok, tambahkan ke PATH, lalu jalankan command "ngrok config add-authtoken (AUTH TOKEN KALIAN DISINI) "
-15. Copy forwarding webnya jika kalian sudah seperti ini
-![image](https://github.com/notbx57/bookingpesawat/assets/94163016/8a03b91d-9452-4cb2-a38e-61ffe716e7d7)
+15. Copy forwarding URLnya
 16. Pastekan ke dalam akun midtrans kalian di SETTINGS -> PAYMENT -> PAYMENT NOTIFICATION URL seperti ini
 ![image](https://github.com/notbx57/bookingpesawat/assets/94163016/45cec7e3-cd99-48b3-916f-f1e1c0ee53aa)
 17. Happy coding hahahahahaha
