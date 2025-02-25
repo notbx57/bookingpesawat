@@ -22,8 +22,7 @@ Syarat : PHP 8.1 , Node.js, Laragon/XAMPP, ngrok, Midtrans terinstall karena pak
 ##Menjalankan API Midtrans (New)
 
 10. Setup Midtrans kalian agar dapat environment sandbox
-11. tambahkan api key punya kalian ke dalam .env seperti ini
-![image](https://github.com/notbx57/bookingpesawat/assets/94163016/e4950ad2-abe8-4e2c-a2c7-c91342e800d0)
+11. tambahkan api key punya kalian ke dalam .env seperti ini (Key itu rahasia, jangan sampai compromise)
 MIDTRANS_MERCHANT_ID=
 MIDTRANS_CLIENT_KEY=
 MIDTRANS_SERVER_KEY=
